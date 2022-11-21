@@ -1,0 +1,23 @@
+{
+  "name": "intermediate-unit-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bob-fornal/intermediate-unit-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bob-fornal/intermediate-unit-test/issues"
+  },
+  "homepage": "https://github.com/bob-fornal/intermediate-unit-test#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
