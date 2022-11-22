@@ -19,6 +19,14 @@ describe('Testing Stubs', () => {
     expect(stub).toBeCalled();
     expect(stub).toHaveBeenCalled();
   });
+
+  test('stub .not.toBeCalled', () => {
+    const stub = jest.fn();
+    
+    // stub();
+    expect(stub).not.toBeCalled();
+    expect(stub).not.toHaveBeenCalled();
+  });
   
   test('spyOn .toBeCalled', () => {
     const somethingSpy = jest.spyOn(testObject, 'logSomething');
@@ -26,5 +34,19 @@ describe('Testing Stubs', () => {
     testObject.logSomething();
     expect(somethingSpy).toBeCalled();
     expect(somethingSpy).toHaveBeenCalled();
-  });  
+  });
+
+  test('spyOn .mockImplementation', () => {
+    const somethingSpy = jest.spyOn(testObject, 'logSomething').mockImplementation();
+
+    testObject.logSomething();
+    expect(somethingSpy).toHaveBeenCalled(); // no console.log
+  });
+
+  test('spyOn .mockReturnValue', () => {
+    const somethingSpy = jest.spyOn(testObject, 'logSomething').mockReturnValue();
+
+    testObject.logSomething();
+    expect(somethingSpy).toHaveBeenCalled(); // no console.log
+  });
 });
