@@ -31,3 +31,9 @@ Please install `nvm` [link here](https://github.com/nvm-sh/nvm/blob/master/READM
 ```script
 > jest --coveration
 ```
+
+### Coverage Report
+
+```script
+> npm run test:coverage
+```
