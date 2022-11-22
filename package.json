@@ -19,5 +19,9 @@
   "homepage": "https://github.com/bob-fornal/intermediate-unit-test#readme",
   "devDependencies": {
     "jest": "^29.3.1"
+  },
+  "engines" : { 
+    "npm" : ">=8.0.0",
+    "node" : ">=18.0.0"
   }
 }
