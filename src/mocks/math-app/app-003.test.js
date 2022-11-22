@@ -3,7 +3,7 @@ const app = require('./app');
 const math = require('./math');
 
 describe('app testing using Mocks 003', () => {
-  test('calls jest.fn() math.add', () => {
+  it('calls jest.fn() math.add', () => {
     const originalAdd = math.add;
     math.add = jest.fn(originalAdd);
 

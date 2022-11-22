@@ -20,3 +20,14 @@ Please install `nvm` [link here](https://github.com/nvm-sh/nvm/blob/master/READM
 > npm test
 ```
 
+## Coverage
+
+```script
+> npm test -- --coverage
+```
+
+... OR, if you have `jest` installed globally ...
+
+```script
+> jest --coveration
+```

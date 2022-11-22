@@ -10,6 +10,11 @@ class ApiService {
       return [];
     }
   };
+
+  filterUsers = (users, searchTerm) => {
+    const regex = new RegExp(searchTerm, 'i');
+    return users.filter((user) => user.username.match(regex));
+  };
 }
 
 module.exports = { ApiService };

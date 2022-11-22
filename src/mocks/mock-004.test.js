@@ -1,13 +1,13 @@
 
 describe('Mock return Values', () => {
-  test('Original Value', () => {
+  it('expects the original value to be used', () => {
     const testMock = jest.fn();
     
     const result = testMock();
     expect(result).toEqual(undefined);
   });
 
-  test('Injecting Value', () => {
+  it('expects the injected value to be used', () => {
     const testMock = jest.fn();
     testMock
       .mockReturnValueOnce(10)

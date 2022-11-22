@@ -3,7 +3,7 @@ const app = require('./app');
 const math = require('./math');
 
 describe('app testing using Mocks 002', () => {
-  test('calls spy math.add', () => {
+  it('calls spy math.add', () => {
     const addMock = jest.spyOn(math, 'add');
 
     const result = app.doAdd(1, 2);
@@ -11,7 +11,7 @@ describe('app testing using Mocks 002', () => {
     expect(addMock).toHaveBeenCalledWith(1, 2);
   });
 
-  test("calls and restores spy math.add", () => {
+  it("calls and restores spy math.add", () => {
     const addMock = jest.spyOn(math, 'add');
     addMock.mockImplementation(() => 'mock');
 

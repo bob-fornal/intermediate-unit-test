@@ -12,7 +12,7 @@ const multipleAdd = counter => {
 }
 
 describe('Parameter Stubs', () => {
-  test('singleAdd jest.fn() .toHaveBeenCalledWith single call', () => {
+  it('expecets singleAdd jest.fn() .toHaveBeenCalledWith single call', () => {
     const mockCounter = {
       add: jest.fn()
     };
@@ -21,14 +21,14 @@ describe('Parameter Stubs', () => {
     expect(mockCounter.add).toHaveBeenCalledWith(10);
   });
 
-  test('singleAdd jest.spyOn .toHaveBeenCalledWith single call', () => {
+  it('expecets singleAdd jest.spyOn .toHaveBeenCalledWith single call', () => {
     const addSpy = jest.spyOn(counter, 'add');
 
     singleAdd(counter);
     expect(addSpy).toHaveBeenCalledWith(10);
   });
 
-  test('multipleAdd jest.fn .toHaveBeenCalledWith multiple calls', () => {
+  it('expecets multipleAdd jest.fn .toHaveBeenCalledWith multiple calls', () => {
     const mockCounter = {
       add: jest.fn()
     };
@@ -38,7 +38,7 @@ describe('Parameter Stubs', () => {
     expect(mockCounter.add).toHaveBeenCalledWith(20);
   });
 
-  test('multipleAdd jest.spyOn .toHaveBeenCalledWith multiple calls', () => {
+  it('expecets multipleAdd jest.spyOn .toHaveBeenCalledWith multiple calls', () => {
     const addSpy = jest.spyOn(counter, 'add');
     
     multipleAdd(counter);

@@ -9,7 +9,7 @@ function forEach(items, callback) {
 }
 
 describe('Testing Mocks 003', () => {
-  test('Use of the .mock property', () => {
+  it('expects the use of the .mock property', () => {
     const mockCallback = jest.fn(x => 42 + x);
     
     forEach([0, 1], mockCallback);

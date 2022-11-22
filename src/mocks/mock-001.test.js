@@ -4,7 +4,7 @@
 // it with has all the features we need.
 
 describe('Testing Mocks 001', () => {
-  test('testing a minimal mock', () => {
+  it('expects to test a minimal mock', () => {
     const mock = jest.fn();
 
     let result = mock('bob');
@@ -14,7 +14,7 @@ describe('Testing Mocks 001', () => {
     expect(mock).toHaveBeenCalledWith('bob');
   });
 
-  test('testing a mock implementation', () => {
+  it('expects to test a mock implementation', () => {
     const mock = jest.fn(() => 'bob');
 
     const result = mock('called with');
@@ -22,7 +22,7 @@ describe('Testing Mocks 001', () => {
     expect(mock).toHaveBeenCalledWith('called with');
   });
 
-  test('testing another mock implementation', () => {
+  it('expects to test another mock implementation', () => {
     const mock = jest.fn().mockImplementation(() => 'bob');
 
     const result = mock('called with');
@@ -30,7 +30,7 @@ describe('Testing Mocks 001', () => {
     expect(mock).toHaveBeenCalledWith('called with');
   });
 
-  test('testing a single call mock implementation', () => {
+  it('expects to test a single call mock implementation', () => {
     const mock = jest.fn().mockImplementationOnce(() => 'bob');
 
     const result1 = mock('first call');
@@ -42,7 +42,7 @@ describe('Testing Mocks 001', () => {
     expect(mock).toHaveBeenCalledWith('second call');
   });
 
-  test('testing a mock with return value', () => {
+  it('expects to test a mock with return value', () => {
     const mock = jest.fn();
     mock.mockReturnValue('bob');
 
@@ -51,7 +51,7 @@ describe('Testing Mocks 001', () => {
     expect(mock).toHaveBeenCalledWith('called with');
   });
 
-  test('testing a mock with promise resolution', () => {
+  test('expects to test a mock with promise resolution', () => {
     const mock = jest.fn();
     mock.mockResolvedValue('bob');
 
@@ -60,7 +60,7 @@ describe('Testing Mocks 001', () => {
     expect(mock).toHaveBeenCalledWith('called with');
   });
 
-  test('testing a mock with async/await promise resolution', async () => {
+  it('expects to test a mock with async/await promise resolution', async () => {
     const mock = jest.fn();
     mock.mockResolvedValue('bob');
 

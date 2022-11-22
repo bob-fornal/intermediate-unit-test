@@ -8,14 +8,16 @@ class MethodClass {
   instanceMethod = () => 'output from instance method';
 }
 
-const service = new MethodClass();
 
 describe('Spying 001', () => {
+  let service;
+
   beforeEach(() => {
+    service = new MethodClass();
     jest.clearAllMocks();
   });
 
-  test('spy on instance method', () => {
+  it('expects to spy on instance method', () => {
     jest.spyOn(service, 'instanceMethod');
 
     const result = service.instanceMethod();
@@ -23,7 +25,7 @@ describe('Spying 001', () => {
     expect(result).toEqual('output from instance method');
   });
 
-  test('spy on instance method and change implementation', () => {
+  it('expects to spy on instance method and change implementation', () => {
     jest.spyOn(service, 'instanceMethod').mockImplementation(() => 'spy triggered');
 
     const result = service.instanceMethod();
