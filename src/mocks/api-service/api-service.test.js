@@ -4,10 +4,10 @@ const { ApiService } = require('./api-service');
 describe('API Service', () => {
   let service;
   const MOCK_USERS = [
-    { username: 'bob' },
-    { username: 'jen' },
-    { username: 'patrick' },
-    { username: 'anne' }
+    { username: 'bob', startDate: '2022-01-01T12:00:00.000Z' },
+    { username: 'jen', startDate: '2022-02-01T12:00:00.000Z' },
+    { username: 'patrick', startDate: '2022-03-01T12:00:00.000Z' },
+    { username: 'anne', startDate: '2022-04-01T12:00:00.000Z' }
   ];
 
   beforeEach(() => {
@@ -20,7 +20,14 @@ describe('API Service', () => {
   });
 
   it('expects "getUsers" to gets users', async () => {
-    const expected = [...MOCK_USERS];
+    const mockReturnValue = [
+      { username: 'bob', startDate: '2022-01-01T12:00:00.000Z', days: 100 },
+      { username: 'jen', startDate: '2022-02-01T12:00:00.000Z', days: 90 },
+      { username: 'patrick', startDate: '2022-03-01T12:00:00.000Z', days: 80 },
+      { username: 'anne', startDate: '2022-04-01T12:00:00.000Z', days: 70 }
+    ];
+    jest.spyOn(service, 'processDates').mockReturnValue(mockReturnValue);
+    const expected = [...mockReturnValue];
 
     const result = await service.getUsers();
     expect(result).toEqual(expected);
@@ -36,7 +43,7 @@ describe('API Service', () => {
   it('expects "filterUsers" to return the correct elements - single, lowercase', () => {
     const users = [...MOCK_USERS];
     const searchTerm = 'bob';
-    const expected = [{ username: 'bob' }];
+    const expected = [{ username: 'bob', startDate: '2022-01-01T12:00:00.000Z' }];
 
     const result = service.filterUsers(users, searchTerm);
     expect(result).toEqual(expected);
@@ -45,7 +52,7 @@ describe('API Service', () => {
   it('expects "filterUsers" to return the correct elements - single, uppercase', () => {
     const users = [...MOCK_USERS];
     const searchTerm = 'BOB';
-    const expected = [{ username: 'bob' }];
+    const expected = [{ username: 'bob', startDate: '2022-01-01T12:00:00.000Z' }];
 
     const result = service.filterUsers(users, searchTerm);
     expect(result).toEqual(expected);
@@ -67,5 +74,32 @@ describe('API Service', () => {
 
     const result = service.filterUsers(users, searchTerm);
     expect(result).toEqual(expected);
+  });
+
+  it('expects "processDates" to process all days', () => {
+    jest.spyOn(service, 'processDay').mockReturnValue({ item: 'processed' });
+    const data = [{ user: 'bob' }];
+    const now = new Date('2022-10-01T12:00:00.000Z');
+
+    service.processDates(data, now);
+    expect(service.processDay).toHaveBeenCalledWith(data[0], now);
+  });
+
+  it('expects "processDay" to handle no date', () => {
+    const item = { user: 'bob' };
+    const now = new Date('2022-10-01T12:00:00.000Z');
+
+    service.processDay(item, now);
+    expect(item.hasOwnProperty('days')).toEqual(true);
+    expect(item.days).toBeNull();
+  });
+
+  it('expects "processDay" to handle a date', () => {
+    const item = { user: 'bob', startDate: '2022-01-01T12:00:00.000Z' };
+    const now = new Date('2022-10-01T12:00:00.000Z');
+
+    service.processDay(item, now);
+    expect(item.hasOwnProperty('days')).toEqual(true);
+    expect(item.days).toEqual(273);
   });
 });
