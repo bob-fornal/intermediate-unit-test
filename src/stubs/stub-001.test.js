@@ -12,7 +12,7 @@ describe('Testing Stubs', () => {
       .mockImplementation(() => ({}));
   });
   
-  it('expecets stub .toBeCalled', () => {
+  it('expects stub .toBeCalled', () => {
     const stub = jest.fn();
     
     stub();
@@ -20,7 +20,7 @@ describe('Testing Stubs', () => {
     expect(stub).toHaveBeenCalled();
   });
 
-  it('expecets stub .not.toBeCalled', () => {
+  it('expects stub .not.toBeCalled', () => {
     const stub = jest.fn();
     
     // stub();
@@ -28,7 +28,7 @@ describe('Testing Stubs', () => {
     expect(stub).not.toHaveBeenCalled();
   });
   
-  it('expecets spyOn .toBeCalled', () => {
+  it('expects spyOn .toBeCalled', () => {
     const somethingSpy = jest.spyOn(testObject, 'logSomething');
   
     testObject.logSomething();
@@ -36,14 +36,14 @@ describe('Testing Stubs', () => {
     expect(somethingSpy).toHaveBeenCalled();
   });
 
-  it('expecets spyOn .mockImplementation', () => {
+  it('expects spyOn .mockImplementation', () => {
     const somethingSpy = jest.spyOn(testObject, 'logSomething').mockImplementation();
 
     testObject.logSomething();
     expect(somethingSpy).toHaveBeenCalled(); // no console.log
   });
 
-  it('expecets spyOn .mockReturnValue', () => {
+  it('expects spyOn .mockReturnValue', () => {
     const somethingSpy = jest.spyOn(testObject, 'logSomething').mockReturnValue();
 
     testObject.logSomething();

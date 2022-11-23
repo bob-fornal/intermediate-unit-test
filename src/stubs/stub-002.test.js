@@ -7,7 +7,7 @@ const counter = {
 const app = counter => counter.increment();
 
 describe('Counter Stubs', () => {
-  it('expecets app with mock counter .toHaveBeenCalledTimes', () => {
+  it('expects app with mock counter .toHaveBeenCalledTimes', () => {
     const mockCounter = {
       increment: jest.fn()
     };
@@ -17,7 +17,7 @@ describe('Counter Stubs', () => {
     expect(counter.getCount()).toEqual(0);
   });
 
-  it('expecets app with .spyOn(counter) .toHaveBeenCalledTimes', () => {
+  it('expects app with .spyOn(counter) .toHaveBeenCalledTimes', () => {
     const incrementSpy = jest.spyOn(counter, 'increment');
 
     app(counter);

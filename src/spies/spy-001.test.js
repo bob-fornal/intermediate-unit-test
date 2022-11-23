@@ -8,7 +8,6 @@ class MethodClass {
   instanceMethod = () => 'output from instance method';
 }
 
-
 describe('Spying 001', () => {
   let service;
 
