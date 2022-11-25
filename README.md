@@ -1,5 +1,6 @@
 # Intermediate Unit Tests
 
+* [SLIDE DECK](./Intermediate-Unit-Tests.pdf)
 * [Unit and Integration Testing](https://dev.to/leading-edje/unit-and-integration-testing-bco)
 
 ## Setup
