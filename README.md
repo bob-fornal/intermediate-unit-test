@@ -5,19 +5,20 @@
 
 ## Setup
 
+Please install `nvm` [link here](https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating) and run ...
+
+```script
+> nvm install
+> nvm use
+```
+
+... this is done to ensure the correct version of NodeJS is running and is capable of running the `fetch` command.
+
 Run the following ...
 
 ```script
 > npm install
 ```
-
-Please install `nvm` [link here](https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating) and run ...
-
-```script
-> nvm use
-```
-
-... this is done to ensure the correct version of NodeJS is running and is capable of running the `fetch` command.
 
 ## Running Unit Tests
 
