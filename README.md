@@ -25,7 +25,7 @@ Please install `nvm` [link here](https://github.com/nvm-sh/nvm/blob/master/READM
 > npm test
 ```
 
-If you have Jest installed globally, you can use ...
+If you have [Jest installed](https://jestjs.io/docs/getting-started#running-from-command-line) globally, you can use ...
 
 ```script
 > jest
@@ -37,7 +37,7 @@ If you have Jest installed globally, you can use ...
 > npm run test:coverage
 ```
 
-... OR, if you have [`jest` installed](https://jestjs.io/docs/getting-started#running-from-command-line) globally ...
+... OR, if you have [Jest installed](https://jestjs.io/docs/getting-started#running-from-command-line) globally ...
 
 ```script
 > jest --coveration
