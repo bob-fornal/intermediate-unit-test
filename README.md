@@ -17,26 +17,28 @@ Please install `nvm` [link here](https://github.com/nvm-sh/nvm/blob/master/READM
 > nvm use
 ```
 
+... this is done to ensure the correct version of NodeJS is running and is capable of running the `fetch` command.
+
 ## Running Unit Tests
 
 ```script
 > npm test
 ```
 
+If you have Jest installed globally, you can use ...
+
+```script
+> jest
+```
+
 ## Coverage
 
 ```script
-> npm test -- --coverage
+> npm run test:coverage
 ```
 
-... OR, if you have `jest` installed globally ...
+... OR, if you have [`jest` installed](https://jestjs.io/docs/getting-started#running-from-command-line) globally ...
 
 ```script
 > jest --coveration
-```
-
-### Coverage Report
-
-```script
-> npm run test:coverage
 ```

@@ -25,7 +25,7 @@ describe('app testing using Mocks 001 - jest.fn', () => {
 
 describe('app testing using Mocks 001 - jest.mock', () => {
   beforeEach(() => {
-    jest.mock('./math.js');    
+    jest.mock('./math.js');
   });
 
   it('calls mock math.add', () => {
