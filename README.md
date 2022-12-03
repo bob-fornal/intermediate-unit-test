@@ -41,5 +41,5 @@ If you have [Jest installed](https://jestjs.io/docs/getting-started#running-from
 ... OR, if you have [Jest installed](https://jestjs.io/docs/getting-started#running-from-command-line) globally ...
 
 ```script
-> jest --coveration
+> jest --coverage
 ```

@@ -1,7 +1,8 @@
 
-// The goal for mocking is to replace something we don’t control
-// with something we do, so it’s important that what we replace
-// it with has all the features we need.
+// The goal for mocking is to replace something we
+// don’t control with something we do, so it’s
+// important that what we replace it with has all
+// the features we need.
 
 describe('Testing Mocks 001', () => {
   it('expects to test a minimal mock', () => {
