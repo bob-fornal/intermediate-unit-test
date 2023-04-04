@@ -9,7 +9,7 @@ const singleAdd = counter => counter.add(10);
 const multipleAdd = counter => {
   counter.add(15);
   counter.add(20);
-}
+};
 
 describe('Parameter Stubs', () => {
   it('expects singleAdd jest.fn() .toHaveBeenCalledWith single call', () => {

@@ -52,7 +52,7 @@ describe('Testing Mocks 001', () => {
     expect(mock).toHaveBeenCalledWith('called with');
   });
 
-  test('expects to test a mock with promise resolution', () => {
+  it('expects to test a mock with promise resolution', () => {
     const mock = jest.fn();
     mock.mockResolvedValue('bob');
 
